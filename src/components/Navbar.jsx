@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
@@ -22,14 +23,19 @@ const Navbar = () => {
 
   return (
     <nav>
-      <a href="#hero" className="nav-logo">Gnanaprabhakar<span>.</span></a>
-      <ul>
-        <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-        <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Experience</a></li>
-        <li><a href="#ai-projects" className={activeSection === 'ai-projects' ? 'active' : ''}>AI Projects</a></li>
-        <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-        <li><a href="#education" className={activeSection === 'education' ? 'active' : ''}>Education</a></li>
-        <li><a href="#contact" className={`nav-cta ${activeSection === 'contact' ? 'active' : ''}`}>Contact</a></li>
+      <div className="nav-container">
+        <a href="#hero" className="nav-logo">Gnanaprabhakar<span>.</span></a>
+        <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? '✕' : '☰'}
+        </div>
+      </div>
+      <ul className={isMobileMenuOpen ? 'open' : ''}>
+        <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
+        <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Experience</a></li>
+        <li><a href="#ai-projects" className={activeSection === 'ai-projects' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>AI Projects</a></li>
+        <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Skills</a></li>
+        <li><a href="#education" className={activeSection === 'education' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Education</a></li>
+        <li><a href="#contact" className={`nav-cta ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
       </ul>
     </nav>
   );

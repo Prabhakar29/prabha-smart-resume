@@ -36,6 +36,8 @@
     border-bottom: 1px solid var(--border);
     transition: padding 0.3s;
   }
+  .nav-container { display: flex; align-items: center; }
+  .mobile-menu-btn { display: none; font-size: 24px; cursor: pointer; color: var(--ink); user-select: none; }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px; font-weight: 600; letter-spacing: 0.02em;
@@ -509,10 +511,18 @@
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
-    nav ul { display: none; }
-    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 60px; }
-    .hero-right { display: none; }
+    nav { padding: 16px 24px; flex-direction: column; align-items: flex-start; background: rgba(250,249,247,0.98); }
+    .nav-container { width: 100%; justify-content: space-between; }
+    .mobile-menu-btn { display: block; }
+    nav ul {
+      display: none; width: 100%; flex-direction: column; align-items: center; gap: 20px;
+      padding-top: 20px; margin-top: 10px; border-top: 1px solid var(--border);
+    }
+    nav ul.open { display: flex; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
+    .hero-right { display: flex; justify-content: center; align-items: center; margin-top: 20px; }
+    .profile-frame { width: 100%; max-width: 300px; height: 360px; margin: 0 auto; }
+    .float-card { display: none; }
     section { padding: 70px 24px; }
     .about-grid, .contact-grid, .skills-layout, .edu-grid { grid-template-columns: 1fr; gap: 40px; }
     .projects-grid { grid-template-columns: 1fr; }
