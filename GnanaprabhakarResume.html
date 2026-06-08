@@ -251,6 +251,59 @@
   .contact-pill:hover { border-color: var(--accent); color: var(--ink); background: var(--accent-pale); }
   .contact-pill-icon { font-size: 18px; width: 24px; text-align: center; }
 
+  /* ─── STRATEGY ─── */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .strategy-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    background: var(--paper);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .strategy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px var(--shadow);
+    border-color: var(--accent);
+  }
+  .strategy-card-icon {
+    font-size: 32px;
+  }
+  .strategy-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .strategy-card-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1024px) {
+    .strategy-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .strategy-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .strategy-card {
+      padding: 24px;
+    }
+  }
+
   /* ─── EXPERIENCE ─── */
   .timeline { position: relative; padding-left: 32px; }
   .timeline::before {
@@ -536,6 +589,7 @@
   <a href="#hero" class="nav-logo">Gnanaprabhakar<span>.</span></a>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#strategy">Strategy</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#ai-projects">AI Projects</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -628,6 +682,46 @@
           <span class="contact-pill-icon">📞</span> +91-978-932-7740
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section id="strategy">
+  <div class="section-label">Strategy</div>
+  <h2>Core<br><em>leadership areas</em></h2>
+  <p class="section-desc">Driving technology vision, cloud efficiency, architectural standards, enterprise AI, and talent development.</p>
+  
+  <div class="strategy-grid fade-in">
+    <div class="strategy-card">
+      <div class="strategy-card-icon">🗺️</div>
+      <h3 class="strategy-card-title">Technology Strategy & Roadmap</h3>
+      <p class="strategy-card-desc">Defining and driving the multi-year technology vision and roadmap aligned with business goals. Evaluating emerging technologies, setting adoption priorities, and ensuring engineering investments deliver measurable business outcomes.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-icon">💰</div>
+      <h3 class="strategy-card-title">FinOps & Cloud Cost Optimisation</h3>
+      <p class="strategy-card-desc">Leading FinOps practices to govern cloud infrastructure spending across Azure and in-house infra — implementing cost attribution models, right-sizing resources, and achieving 20–40% cost reduction while maintaining performance and scalability.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-icon">🏛️</div>
+      <h3 class="strategy-card-title">Engineering Excellence & Platform Architecture</h3>
+      <p class="strategy-card-desc">Establishing architecture standards, design review processes, and engineering best practices across teams — driving adoption of microservices, event-driven architectures, CI/CD pipelines, and platform modernisation initiatives to ensure scalable, resilient systems.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-icon">🧠</div>
+      <h3 class="strategy-card-title">AI & Digital Transformation</h3>
+      <p class="strategy-card-desc">Championing enterprise AI adoption by integrating LLMs, intelligent automation, and data-driven decision-making into core products and operations — identifying high-impact use cases and building the organisational capability to execute on them.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-icon">👥</div>
+      <h3 class="strategy-card-title">Team Building & Capability Development</h3>
+      <p class="strategy-card-desc">Building high-performing engineering teams from the ground up — hiring, onboarding, and upskilling talent across diverse technology stacks. Designing structured training programs, mentorship frameworks, and knowledge-transfer initiatives to accelerate ramp-up, foster a culture of continuous learning, and ensure seamless adoption of team processes, tools, and engineering standards from day one.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-icon">🔬</div>
+      <h3 class="strategy-card-title">Innovation Labs & Proof of Concept Execution</h3>
+      <p class="strategy-card-desc">Establishing dedicated innovation labs and sandbox environments to rapidly prototype, validate, and de-risk emerging technologies — running time-boxed POCs on AI/ML, blockchain, IoT, and edge computing, measuring business viability through defined success metrics, and fast-tracking successful experiments into production-ready solutions with clear go/no-go frameworks.</p>
     </div>
   </div>
 </section>

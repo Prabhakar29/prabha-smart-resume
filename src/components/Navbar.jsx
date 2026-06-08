@@ -31,6 +31,7 @@ const Navbar = () => {
       </div>
       <ul className={isMobileMenuOpen ? 'open' : ''}>
         <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
+        <li><a href="#strategy" className={activeSection === 'strategy' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Strategy</a></li>
         <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Experience</a></li>
         <li><a href="#ai-projects" className={activeSection === 'ai-projects' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>AI Projects</a></li>
         <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={() => setIsMobileMenuOpen(false)}>Skills</a></li>
